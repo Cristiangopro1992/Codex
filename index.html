@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taylor Grill PM/Certification Program</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .sheet { font-size: 10.6px; line-height: 1.15; }
+    .title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; }
+    .line-input { width:100%; border:0; border-bottom:1px solid #94a3b8; background:transparent; padding:0 2px; font-size:10.6px; }
+    .line-input:focus { outline:none; border-color:#2563eb; box-shadow:0 1px 0 #2563eb; }
+    .check { width:12px; height:12px; accent-color:#0f172a; }
+    .row { display:grid; grid-template-columns: minmax(0,1fr) auto auto auto; column-gap:8px; align-items:center; margin-top:1px; }
+    .row2 { display:grid; grid-template-columns: minmax(0,1fr) auto auto; column-gap:8px; align-items:center; margin-top:1px; }
+    .modern { border:1px solid #e2e8f0; border-radius:8px; padding:6px; background:linear-gradient(180deg,#fff,#f8fafc); }
+    .sig { width:100%; height:95px; border:1px dashed #94a3b8; border-radius:6px; background:#fff; }
+    .tiny { font-size:9.4px; color:#475569; }
+    @media print { #actions{display:none!important;} body{background:#fff!important;} #pdfArea{box-shadow:none!important;} }
+  </style>
+</head>
+<body class="bg-[#f4f5f7] text-slate-900">
+  <main class="mx-auto max-w-7xl p-3 md:p-6">
+    <section id="pdfArea" class="sheet rounded-xl border border-slate-200 bg-white p-3 shadow-lg md:p-4">
+      <!-- Header identical structure -->
+      <header class="mb-2 border-b border-slate-300 pb-2">
+        <div class="mb-1 flex items-center justify-between">
+          <div class="font-extrabold text-[20px] leading-none">Taylor Grill PM/Certification Program</div>
+          <div class="text-4xl font-bold leading-none">M</div>
+        </div>
+        <div class="grid grid-cols-12 gap-1">
+          <label class="col-span-2">*McDonald's Store No.<input class="line-input" type="text"></label>
+          <label class="col-span-5">*Work Order No.<input class="line-input" type="text"></label>
+          <label class="col-span-2">*PM Start Date<input class="line-input" type="date"></label>
+          <label class="col-span-3">Certification Start Date<input class="line-input" type="date"></label>
+
+          <label class="col-span-4">*Address<input class="line-input" type="text"></label>
+          <label class="col-span-2">*City<input class="line-input" type="text"></label>
+          <label class="col-span-2">*State<input class="line-input" type="text"></label>
+          <label class="col-span-1">*Zip<input class="line-input" type="text"></label>
+          <label class="col-span-3">*Time In<input class="line-input" type="time"></label>
+
+          <label class="col-span-2">*Country<input class="line-input" type="text"></label>
+          <label class="col-span-3">*Phone Number<input class="line-input" type="text"></label>
+          <label class="col-span-3">*Model Number<input class="line-input" type="text"></label>
+          <label class="col-span-4">*Serial Number<input class="line-input" type="text"></label>
+        </div>
+      </header>
+
+      <div class="grid grid-cols-2 gap-2">
+        <!-- LEFT COLUMN -->
+        <section class="space-y-2">
+          <!-- A -->
+          <div class="modern">
+            <h2 class="title">A. Initial Inspection</h2>
+            <div class="row"><span>1. Grease Migration - Grill Interior</span><label><input class="check" type="radio" name="a1">None</label><label><input class="check" type="radio" name="a1">Minimal</label><label><input class="check" type="radio" name="a1">Excessive</label></div>
+            <div class="row"><span>2. Grease Migration - Upper Platen</span><label><input class="check" type="radio" name="a2">None</label><label><input class="check" type="radio" name="a2">Minimal</label><label><input class="check" type="radio" name="a2">Excessive</label></div>
+            <div class="row"><span>3. Carbon Build-up on Cook Surface</span><label><input class="check" type="radio" name="a3">None</label><label><input class="check" type="radio" name="a3">Minimal</label><label><input class="check" type="radio" name="a3">Excessive</label></div>
+            <div class="row"><span>4. Carbon Build-up on Platen Sides</span><label><input class="check" type="radio" name="a4">None</label><label><input class="check" type="radio" name="a4">Minimal</label><label><input class="check" type="radio" name="a4">Excessive</label></div>
+            <div class="row2"><span>5. Platen Plating Intact</span><label><input class="check" type="radio" name="a5">Yes</label><label><input class="check" type="radio" name="a5">No</label></div>
+            <div class="row2"><span>6. Platen Shroud Separation</span><label><input class="check" type="radio" name="a6">Yes</label><label><input class="check" type="radio" name="a6">No</label></div>
+            <div class="row2"><span>7. Low Cook Plate in Good Condition</span><label><input class="check" type="radio" name="a7">Yes</label><label><input class="check" type="radio" name="a7">No</label></div>
+          </div>
+
+          <!-- B -->
+          <div class="modern">
+            <h2 class="title">B. Replace Wear Items</h2>
+            <div class="row2"><span>1. Air Lines</span><label><input class="check" type="radio" name="b1">Replaced</label><span></span></div>
+            <div class="row2"><span>2. Platen Cover Gasket</span><label><input class="check" type="radio" name="b2">Replaced</label><span></span></div>
+            <div class="row2"><span>3. Backsplash Arm Shields</span><label><input class="check" type="radio" name="b3">Replaced</label><span></span></div>
+          </div>
+
+          <!-- C -->
+          <div class="modern">
+            <h2 class="title">C. Mechanical/Function Evaluation</h2>
+            <div class="row2"><span>1. Inspect Power Cords & Receptacles</span><label><input class="check" type="radio" name="c1">Good</label><label><input class="check" type="radio" name="c1">Faulty</label></div>
+            <div class="row2"><span>2. Inspect Wiring & Connections</span><label><input class="check" type="radio" name="c2">Good</label><label><input class="check" type="radio" name="c2">Faulty</label></div>
+            <div class="row2"><span>3. Check/Adjust Air Pressure Regulator</span><label><input class="check" type="radio" name="c3">Good</label><label><input class="check" type="radio" name="c3">Faulty</label></div>
+            <div class="row2"><span>4. Air System Check for Leaks</span><label><input class="check" type="radio" name="c4">Good</label><label><input class="check" type="radio" name="c4">Leaking</label></div>
+            <div class="row2"><span>5. Latch Switch Engagement</span><label><input class="check" type="radio" name="c5">Good</label><label><input class="check" type="radio" name="c5">Faulty</label></div>
+            <div class="row2"><span>6. Latch Compression</span><label><input class="check" type="radio" name="c6">Good</label><label><input class="check" type="radio" name="c6">Faulty</label></div>
+            <div class="row2"><span>7. Standby Mode</span><label><input class="check" type="radio" name="c7">Good</label><label><input class="check" type="radio" name="c7">Faulty</label></div>
+            <div class="row2"><span>8. Platen Raise Motion</span><label><input class="check" type="radio" name="c8">Good</label><label><input class="check" type="radio" name="c8">Faulty</label></div>
+            <div class="row2"><span>9. Platen Raise Time</span><label><input class="check" type="radio" name="c9">Good</label><label><input class="check" type="radio" name="c9">Faulty</label></div>
+            <div class="row2"><span>10. Timing</span><label><input class="check" type="radio" name="c10">Good</label><label><input class="check" type="radio" name="c10">Faulty</label></div>
+            <div class="row2"><span>11. Compressor Duty Cycle</span><label><input class="check" type="radio" name="c11">Good</label><label><input class="check" type="radio" name="c11">Faulty</label></div>
+            <div class="row2"><span>12. Drain Solenoid Operation</span><label><input class="check" type="radio" name="c12">Good</label><label><input class="check" type="radio" name="c12">Faulty</label></div>
+            <div class="row2"><span>13. Platen Movement</span><label><input class="check" type="radio" name="c13">Good</label><label><input class="check" type="radio" name="c13">Faulty</label></div>
+            <div class="row2"><span>14. Platen Arm Shields - Left Platen</span><label><input class="check" type="radio" name="c14">Good</label><label><input class="check" type="radio" name="c14">Faulty</label></div>
+            <div class="row2"><span>15. Platen Arm Shields - Right Platen</span><label><input class="check" type="radio" name="c15">Good</label><label><input class="check" type="radio" name="c15">Faulty</label></div>
+            <div class="row2"><span>16. Platen Arm Shields - Center Platen</span><label><input class="check" type="radio" name="c16">Good</label><label><input class="check" type="radio" name="c16">Faulty</label></div>
+            <div class="row2"><span>17. Belts</span><label><input class="check" type="radio" name="c17">Good</label><label><input class="check" type="radio" name="c17">Faulty</label></div>
+            <div class="row2"><span>18. Pulleys</span><label><input class="check" type="radio" name="c18">Good</label><label><input class="check" type="radio" name="c18">Faulty</label></div>
+            <div class="row2"><span>19. Handle Fasteners</span><label><input class="check" type="radio" name="c19">Tight</label><label><input class="check" type="radio" name="c19">Loose</label></div>
+            <div class="row2"><span>20. Home Switch</span><label><input class="check" type="radio" name="c20">Good</label><label><input class="check" type="radio" name="c20">Faulty</label></div>
+            <div class="row2"><span>21. Stepper Motor/Hall Motors</span><label><input class="check" type="radio" name="c21">Good</label><label><input class="check" type="radio" name="c21">Faulty</label></div>
+            <div class="row2"><span>22. Full Range Platen Travel</span><label><input class="check" type="radio" name="c22">Good</label><label><input class="check" type="radio" name="c22">Faulty</label></div>
+            <div class="row2"><span>23. Release Sheets</span><label><input class="check" type="radio" name="c23">Good</label><label><input class="check" type="radio" name="c23">Faulty</label></div>
+            <div class="row2"><span>24. Release Material Clips</span><label><input class="check" type="radio" name="c24">Good</label><label><input class="check" type="radio" name="c24">Faulty</label></div>
+            <div class="row2"><span>25. Cables</span><label><input class="check" type="radio" name="c25">Good</label><label><input class="check" type="radio" name="c25">Faulty</label></div>
+          </div>
+
+          <!-- D -->
+          <div class="modern">
+            <h2 class="title">D. Electrical Inspection</h2>
+            <div class="grid grid-cols-2 gap-1">
+              <label>1. Power Supply L1-L2<input class="line-input" type="text"></label>
+              <label>2. Amperage Readings L1<input class="line-input" type="text"></label>
+              <label>L1-L3<input class="line-input" type="text"></label>
+              <label>L2<input class="line-input" type="text"></label>
+              <label>L2-L3<input class="line-input" type="text"></label>
+              <label>L3<input class="line-input" type="text"></label>
+              <label>Right<input class="line-input" type="text"></label>
+              <label>Interlock<input class="line-input" type="text"></label>
+            </div>
+          </div>
+
+          <!-- E -->
+          <div class="modern">
+            <h2 class="title">E. Inspection for Gas Grills</h2>
+            <div class="row2"><span>1. Gas Type</span><label><input class="check" type="radio" name="e1">Natural</label><label><input class="check" type="radio" name="e1">Propane</label></div>
+            <div class="row2"><span>2. Flame Appearance</span><label><input class="check" type="radio" name="e2">Good</label><label><input class="check" type="radio" name="e2">Adjust</label></div>
+            <div class="row2"><span>3. Electrodes</span><label><input class="check" type="radio" name="e3">Good</label><label><input class="check" type="radio" name="e3">Faulty</label></div>
+            <div class="row2"><span>4. Fans</span><label><input class="check" type="radio" name="e4">Good</label><label><input class="check" type="radio" name="e4">Faulty</label></div>
+            <div class="row2"><span>5. Condition of Gas Hose/Bracket</span><label><input class="check" type="radio" name="e5">Good</label><label><input class="check" type="radio" name="e5">Faulty</label></div>
+            <div class="row2"><span>6. Flue Adjustment</span><label><input class="check" type="radio" name="e6">Good</label><label><input class="check" type="radio" name="e6">Adjust</label></div>
+            <div class="row2"><span>7. Check for Gas Leaks</span><label><input class="check" type="radio" name="e7">Good</label><label><input class="check" type="radio" name="e7">Adjust</label></div>
+          </div>
+
+          <!-- Model sections left -->
+          <div class="modern">
+            <h2 class="title">Complete for Models 15E/22E, 32/34/35/36/38, C832/C834/C835/C842/C844/C845</h2>
+            <div class="row2"><span>1. Control Board Software Version</span><label>Left <input class="line-input inline w-14" type="text"></label><label>Center/Right <input class="line-input inline w-14" type="text"></label></div>
+            <div class="row2"><span>2. Interface Board Software Version</span><label>Left <input class="line-input inline w-14" type="text"></label><label>Center/Right <input class="line-input inline w-14" type="text"></label></div>
+            <p class="tiny mt-1">*Note: Interface board does not apply to 15E or 22E.</p>
+          </div>
+
+          <div class="modern">
+            <h2 class="title">Complete for Models 11/12/15/69/22/25/28</h2>
+            <div class="row2"><span>1. Temperature Control Calibration Plates</span><label><input class="check" type="radio" name="m1">Good</label><label><input class="check" type="radio" name="m1">Faulty</label></div>
+            <div class="row2"><span>2. Temperature Control Knobs</span><label><input class="check" type="radio" name="m2">Good</label><label><input class="check" type="radio" name="m2">Faulty</label></div>
+            <div class="row2"><span>3. Green Indicator Lights</span><label><input class="check" type="radio" name="m3">Good</label><label><input class="check" type="radio" name="m3">Faulty</label></div>
+            <div class="row2"><span>4. Red Indicator Lights</span><label><input class="check" type="radio" name="m4">Good</label><label><input class="check" type="radio" name="m4">Faulty</label></div>
+            <div class="row2"><span>5. Amber Indicator Lights</span><label><input class="check" type="radio" name="m5">Good</label><label><input class="check" type="radio" name="m5">Faulty</label></div>
+            <div class="row2"><span>6. Filters (Model 15 only)</span><label><input class="check" type="radio" name="m6">Good</label><label><input class="check" type="radio" name="m6">Faulty</label></div>
+          </div>
+
+          <div class="modern">
+            <h2 class="title">Complete for Models 11/12/15/69/22/25/28, 15E/22E</h2>
+            <div class="row2"><span>1. Handle Grommets</span><label><input class="check" type="radio" name="n1">Replaced</label><span></span></div>
+            <div class="row2"><span>2. Adjustment Grommets</span><label><input class="check" type="radio" name="n2">Replaced</label><span></span></div>
+            <div class="row2"><span>3. Arm Grommets (Platen Shields)</span><label><input class="check" type="radio" name="n3">Replaced</label><span></span></div>
+            <div class="row2"><span>4. Hydraulic Cylinders (if applies)</span><label><input class="check" type="radio" name="n4">Good</label><label><input class="check" type="radio" name="n4">Faulty</label></div>
+            <div class="row2"><span>5. Bumpers</span><label><input class="check" type="radio" name="n5">Good</label><label><input class="check" type="radio" name="n5">Faulty</label></div>
+            <div class="row2"><span>6. Rear Bearings</span><label><input class="check" type="radio" name="n6">Good</label><label><input class="check" type="radio" name="n6">Faulty</label></div>
+            <div class="row2"><span>7. Turrets</span><label><input class="check" type="radio" name="n7">Good</label><label><input class="check" type="radio" name="n7">Faulty</label></div>
+            <div class="row2"><span>8. Ball Detents</span><label><input class="check" type="radio" name="n8">Good</label><label><input class="check" type="radio" name="n8">Faulty</label></div>
+            <div class="row2"><span>9. Product Stops</span><label><input class="check" type="radio" name="n9">Good</label><label><input class="check" type="radio" name="n9">Faulty</label></div>
+            <div class="row2"><span>10. Gap Adjustment Screws</span><label><input class="check" type="radio" name="n10">Good</label><label><input class="check" type="radio" name="n10">Faulty</label></div>
+          </div>
+
+          <div class="modern">
+            <h2 class="title">Complete for Models 32/34/35/36/38</h2>
+            <div class="row2"><span>1. Gap Adjustment Blocks</span><label><input class="check" type="radio" name="o1">Good</label><label><input class="check" type="radio" name="o1">Faulty</label></div>
+            <div class="row2"><span>2. Stepper Motor Coupling</span><label><input class="check" type="radio" name="o2">Replaced</label><label><input class="check" type="radio" name="o2">Direct Drive</label></div>
+            <div class="row2"><span>3. Auto Close Mode</span><label><input class="check" type="radio" name="o3">Good</label><label><input class="check" type="radio" name="o3">Faulty</label></div>
+          </div>
+
+          <div class="modern">
+            <h2 class="title">Complete for Models C832/C834/C835/C842/C844/C845</h2>
+            <div class="row2"><span>1. Auto Close Mode</span><label><input class="check" type="radio" name="p1">Good</label><label><input class="check" type="radio" name="p1">Faulty</label></div>
+          </div>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <section class="space-y-2">
+          <!-- F -->
+          <div class="modern">
+            <h2 class="title">F. Temperature Calibration</h2>
+            <div class="row2"><span>1. Restaurant's pyrometer used for calibrating grill</span><label><input class="check" type="radio" name="f1">Yes</label><label><input class="check" type="radio" name="f1">No</label></div>
+            <div class="row"><span>2. If no, indicate reason:</span><label><input class="check" type="radio" name="f2">No pyrometer in store</label><label><input class="check" type="radio" name="f2">Store's pyrometer defective</label><span></span></div>
+            <div class="row2"><span>3. Pyrometer calibration checked</span><label><input class="check" type="radio" name="f3">Yes</label><label><input class="check" type="radio" name="f3">No</label></div>
+            <div class="row2"><span>4. Heater Operation "On" Time</span><label><input class="check" type="radio" name="f4">Good</label><label><input class="check" type="radio" name="f4">Faulty</label></div>
+
+            <h3 class="mt-1 font-bold">Check/Adjust Zone Temperatures</h3>
+            <div class="grid grid-cols-12 gap-x-1 gap-y-0.5">
+              <div class="col-span-6 font-semibold">(Front temperatures apply to C832/C834/C835/C842/C844/C845)</div>
+              <div class="col-span-2 font-semibold text-center">Temp Found</div>
+              <div class="col-span-2 text-center">Yes</div>
+              <div class="col-span-2 text-center">No</div>
+
+              <label class="col-span-6">5. Left Side<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft5"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft5"></label>
+              <label class="col-span-6">6. Upper Platen Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft6"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft6"></label>
+              <label class="col-span-6">7. Upper Platen Temperature (Front)<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft7"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft7"></label>
+              <label class="col-span-6">8. Front Zone Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft8"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft8"></label>
+              <label class="col-span-6">9. Middle Zone Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft9"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft9"></label>
+              <label class="col-span-6">10. Rear Zone Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft10"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft10"></label>
+
+              <div class="col-span-12 font-semibold">Right Side</div>
+              <label class="col-span-6">11. Upper Platen Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft11"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft11"></label>
+              <label class="col-span-6">12. Upper Platen Temperature (Front)<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft12"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft12"></label>
+              <label class="col-span-6">13. Front Zone Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft13"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft13"></label>
+              <label class="col-span-6">14. Middle Zone Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft14"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft14"></label>
+              <label class="col-span-6">15. Rear Zone Temperature<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft15"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft15"></label>
+              <label class="col-span-6">20. All temperature zones calibrated to spec<input class="line-input" type="text"></label><input class="line-input col-span-2" type="text"><label class="col-span-2 text-center"><input class="check" type="radio" name="ft20"></label><label class="col-span-2 text-center"><input class="check" type="radio" name="ft20"></label>
+            </div>
+          </div>
+
+          <!-- G -->
+          <div class="modern">
+            <h2 class="title">G. Gap Inspection (Models 11/12/15/69/22/25/28, 15E/22E)</h2>
+            <div class="row2"><span>1. 10:1 Setting - Left Side</span><label><input class="check" type="radio" name="g1">Good</label><label><input class="check" type="radio" name="g1">Adjust</label></div>
+            <div class="row2"><span>2. 10:1 Setting - Right Side</span><label><input class="check" type="radio" name="g2">Good</label><label><input class="check" type="radio" name="g2">Adjust</label></div>
+            <div class="row2"><span>3. 4:1 Setting - Left Side</span><label><input class="check" type="radio" name="g3">Good</label><label><input class="check" type="radio" name="g3">Adjust</label></div>
+            <div class="row2"><span>4. 4:1 Setting - Right Side</span><label><input class="check" type="radio" name="g4">Good</label><label><input class="check" type="radio" name="g4">Adjust</label></div>
+            <div class="row2"><span>5. Gap settings adjusted to correct specification</span><label><input class="check" type="radio" name="g5">Yes</label><label><input class="check" type="radio" name="g5">No</label></div>
+          </div>
+
+          <!-- H -->
+          <div class="modern">
+            <h2 class="title">H. Infinite Gap Inspection</h2>
+            <div class="row2"><span>1. Dual Gap Chips Installed</span><label><input class="check" type="radio" name="h1">Yes</label><label><input class="check" type="radio" name="h1">No</label></div>
+            <div class="row2"><span>2. Dual Gap Chips Activated</span><label><input class="check" type="radio" name="h2">Yes</label><label><input class="check" type="radio" name="h2">No</label></div>
+            <div class="row2"><span>3. 10:1 Gap Setting - Left Side</span><label><input class="check" type="radio" name="h3">OK</label><label><input class="check" type="radio" name="h3">Adjust</label></div>
+            <div class="row2"><span>4. 4:1 Gap Setting - Left Side</span><label><input class="check" type="radio" name="h4">OK</label><label><input class="check" type="radio" name="h4">Adjust</label></div>
+            <div class="row2"><span>5. 10:1 Gap Setting - Right Side</span><label><input class="check" type="radio" name="h5">OK</label><label><input class="check" type="radio" name="h5">Adjust</label></div>
+            <div class="row2"><span>6. 4:1 Gap Setting - Right Side</span><label><input class="check" type="radio" name="h6">OK</label><label><input class="check" type="radio" name="h6">Adjust</label></div>
+            <div class="row2"><span>7. 10:1 Gap Setting - Center (3-platen models only)</span><label><input class="check" type="radio" name="h7">OK</label><label><input class="check" type="radio" name="h7">Adjust</label></div>
+            <div class="row2"><span>8. 4:1 Gap Setting - Center (3-platen models only)</span><label><input class="check" type="radio" name="h8">OK</label><label><input class="check" type="radio" name="h8">Adjust</label></div>
+          </div>
+
+          <!-- I -->
+          <div class="modern">
+            <h2 class="title">I. Beef Integrity Check</h2>
+            <div class="row2"><span>1. Steps listed on daily beef integrity checklist performed with manager</span><label><input class="check" type="radio" name="i1">Yes</label><label><input class="check" type="radio" name="i1">No</label></div>
+            <div class="mt-1">2. Cook Time Settings:</div>
+            <div class="grid grid-cols-4 gap-1 mt-1">
+              <label>10:1 Left<input class="line-input" type="text"></label>
+              <label>10:1 Center<input class="line-input" type="text"></label>
+              <label>10:1 Right<input class="line-input" type="text"></label>
+              <label>4:1/Angus<input class="line-input" type="text"></label>
+            </div>
+          </div>
+
+          <!-- J -->
+          <div class="modern">
+            <h2 class="title">J. Inspection Results</h2>
+            <div class="row2"><span>1. PM Inspection Completed</span><label><input class="check" type="radio" name="j1">Yes</label><label><input class="check" type="radio" name="j1">No</label></div>
+            <div class="row2"><span>2. Ensure 3 Electrode Danger Labels In Place</span><label><input class="check" type="radio" name="j2">Yes</label><label><input class="check" type="radio" name="j2">No</label></div>
+
+            <div class="mt-1 font-semibold">3. Certification Status (select one):</div>
+            <label class="block mt-0.5"><input class="check" type="radio" name="cert"> Grill - No Additional Repairs Needed</label>
+            <label class="block mt-0.5"><input class="check" type="radio" name="cert"> Grill Repaired Immediately, Then Certified</label>
+            <label class="block mt-0.5"><input class="check" type="radio" name="cert"> Grill Not Certified - Additional Repairs Needed</label>
+
+            <div class="mt-1 font-semibold">4. If grill was not certified, indicate estimated total repair cost to become certified (select one):</div>
+            <div class="grid grid-cols-3 gap-1">
+              <label><input class="check" type="radio" name="cost"> US$0 - $100</label>
+              <label><input class="check" type="radio" name="cost"> US$101 - US$300</label>
+              <label><input class="check" type="radio" name="cost"> US$301 - $500</label>
+              <label><input class="check" type="radio" name="cost"> US$501 - $1000</label>
+              <label><input class="check" type="radio" name="cost"> US$1001 - $1500</label>
+              <label><input class="check" type="radio" name="cost"> US$1500 - $2000</label>
+              <label><input class="check" type="radio" name="cost"> Over US$2000</label>
+            </div>
+
+            <div class="grid grid-cols-3 gap-1 mt-1">
+              <label>*5. Grill Needs Platens Repaired<input class="line-input" type="number" min="0" max="3"></label>
+              <label>*6. Grill Needs Platens Replaced<input class="line-input" type="number" min="0" max="3"></label>
+              <label>*7. Certification Number<input class="line-input" type="text"></label>
+            </div>
+            <label class="mt-1 block">*8. Certification Date<input class="line-input" type="date"></label>
+
+            <div class="mt-1">Check box if additional repair is needed (select one):</div>
+            <div class="grid grid-cols-3 gap-1">
+              <label><input class="check" type="radio" name="rep"> Approved Repair - to be scheduled</label>
+              <label><input class="check" type="radio" name="rep"> Pending Store Approval for Repair</label>
+              <label><input class="check" type="radio" name="rep"> Refuse Repair</label>
+            </div>
+
+            <div class="grid grid-cols-12 gap-1 mt-1">
+              <label class="col-span-4">*PM Completed Date<input class="line-input" type="date"></label>
+              <label class="col-span-4">*Time Out<input class="line-input" type="time"></label>
+              <label class="col-span-4">AM/PM<input class="line-input" type="text"></label>
+              <label class="col-span-6">*Technician Name<input class="line-input" type="text"></label>
+              <label class="col-span-6">*Badge No.<input class="line-input" type="text"></label>
+              <label class="col-span-6">*Company<input class="line-input" type="text"></label>
+              <label class="col-span-6">*Manager Name (Print)<input class="line-input" type="text"></label>
+            </div>
+          </div>
+
+          <!-- Signatures -->
+          <div class="modern">
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <p class="font-semibold">*Manager Name (Signature):</p>
+                <canvas id="clientSign" class="sig"></canvas>
+                <button type="button" data-clear="clientSign" class="mt-1 rounded bg-slate-100 px-2 py-1 text-[10px] font-semibold">Borrar firma</button>
+              </div>
+              <div>
+                <p class="font-semibold">*Technician Signature:</p>
+                <canvas id="techSign" class="sig"></canvas>
+                <button type="button" data-clear="techSign" class="mt-1 rounded bg-slate-100 px-2 py-1 text-[10px] font-semibold">Borrar firma</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- footer notes -->
+      <footer class="mt-2 border-t border-slate-300 pt-1 text-[9px] text-slate-600">
+        <div class="flex flex-wrap items-center justify-between gap-1">
+          <span>* Indicates Factory Web Page Fields</span>
+          <span>White - Distributor Copy</span>
+          <span>Pink - Authorized Agent Copy</span>
+          <span>Yellow - Customer Copy</span>
+          <span>Rev 06.22.2010hz</span>
+        </div>
+      </footer>
+    </section>
+
+    <div id="actions" class="sticky bottom-2 mt-3 flex justify-end">
+      <button id="finishBtn" class="rounded-lg bg-blue-600 px-5 py-2 text-sm font-bold text-white shadow-md hover:bg-blue-700">Finalizar y generar PDF</button>
+    </div>
+  </main>
+
+  <script>
+    const pads = {};
+
+    function resize(canvas) {
+      const ratio = Math.max(window.devicePixelRatio || 1, 1);
+      const w = canvas.parentElement.clientWidth - 2;
+      canvas.width = w * ratio;
+      canvas.height = 95 * ratio;
+      canvas.getContext('2d').scale(ratio, ratio);
+    }
+
+    function initSignatures() {
+      ['techSign', 'clientSign'].forEach((id) => {
+        const canvas = document.getElementById(id);
+        resize(canvas);
+        pads[id] = new SignaturePad(canvas, { penColor: '#0f172a', minWidth: 0.8, maxWidth: 2 });
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      Object.keys(pads).forEach((id) => {
+        const data = pads[id].toData();
+        resize(document.getElementById(id));
+        pads[id].fromData(data);
+      });
+    });
+
+    document.querySelectorAll('[data-clear]').forEach((btn) => {
+      btn.addEventListener('click', () => pads[btn.dataset.clear]?.clear());
+    });
+
+    function validateForm() {
+      const textCount = [...document.querySelectorAll('input[type="text"], input[type="date"], input[type="time"], input[type="number"]')]
+        .filter((el) => el.value.trim()).length;
+      const checks = document.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').length;
+      return textCount + checks >= 18;
+    }
+
+    async function downloadPDF() {
+      if (!validateForm()) {
+        await Swal.fire({ icon: 'warning', title: 'Formulario incompleto', text: 'Completa más datos para generar el documento.' });
+        return;
+      }
+
+      Swal.fire({
+        title: 'Generando documento...',
+        text: 'Por favor espera unos segundos.',
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+      });
+
+      try {
+        await html2pdf().set({
+          margin: [3, 3, 3, 3],
+          filename: `Taylor_Grill_PM_${new Date().toISOString().slice(0, 10)}.pdf`,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+          pagebreak: { mode: ['css', 'legacy'] }
+        }).from(document.getElementById('pdfArea')).save();
+
+        await Swal.fire({ icon: 'success', title: 'Éxito', text: 'PDF generado correctamente.' });
+      } catch (err) {
+        await Swal.fire({ icon: 'error', title: 'Error', text: 'No fue posible generar el PDF.' });
+      }
+    }
+
+    document.getElementById('finishBtn').addEventListener('click', downloadPDF);
+    initSignatures();
+  </script>
+</body>
+</html>
